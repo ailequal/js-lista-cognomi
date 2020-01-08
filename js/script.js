@@ -1,5 +1,5 @@
 // existing arraySurname
-var arraySurname = ['Rossi', 'Verdi', 'Serafini', 'Pronti', 'Protti', 'Tonti', 'Tonini', 'Magnani', 'Verducci', 'Esati'];
+var arraySurname = ['Pellini', 'Rossi', 'Verdi', 'Serafini', 'Pronti', 'Protti', 'Tonti', 'Tonini', 'Magnani', 'Verducci', 'Esati'];
 var arraySurnameUlUnsortedList = document.getElementById('unsorted-list');
 for (var i = 0; i < arraySurname.length; i++) {
   arraySurname[i] = arraySurname[i].toUpperCase();
@@ -24,8 +24,9 @@ console.log('=====');
 // print array sorted alphabetically inside the html
 var arraySurnameUlSortedList = document.getElementById('sorted-list');
 for (var i = 0; i < arraySurname.length; i++) {
-  arraySurnameUlSortedList.innerHTML = arraySurnameUlSortedList.innerHTML + '<li>' + arraySurname[i] + '</li>';
-  if (userSurname === arraySurname[i]) {
+  if (userSurname !== arraySurname[i]) {
+    arraySurnameUlSortedList.innerHTML = arraySurnameUlSortedList.innerHTML + '<li>' + arraySurname[i] + '</li>';
+  } else {
     arraySurnameUlSortedList.innerHTML = arraySurnameUlSortedList.innerHTML + '<li class="red">' + arraySurname[i] + '</li>';
   }
 }
