@@ -1,3 +1,4 @@
+/* general */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +6,42 @@
 }
 
 body {
+  min-width: 320px;
+  background-color: #77a8a8;
   font-family: sans-serif;
   font-size: 16px;
+}
+
+ul {
+  /* text-transform: uppercase; */
+  font-size: 20px;
+}
+
+.red {
+  color: red;
+}
+
+/* main */
+.title {
+  margin: 20px;
+  text-align: center;
+  color: #f0efef;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.unsorted {
+  color: #d9ecd0;
+}
+
+.sorted {
+  color: #c2d4dd;
+}
+
+.position {
+  text-align: center;
 }

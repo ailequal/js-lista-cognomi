@@ -1,39 +1,43 @@
 // existing arraySurname
 var arraySurname = ['Rossi', 'Verdi', 'Serafini', 'Pronti', 'Protti', 'Tonti', 'Tonini', 'Magnani', 'Verducci', 'Esati'];
-// for (var i = 0; i < arraySurname.length; i++) {
-//   console.log(arraySurname[i]);
-// }
-// console.log('=====');
+var arraySurnameUlUnsortedList = document.getElementById('unsorted-list');
+for (var i = 0; i < arraySurname.length; i++) {
+  arraySurname[i] = arraySurname[i].toUpperCase();
+  arraySurnameUlUnsortedList.innerHTML = arraySurnameUlUnsortedList.innerHTML + '<li>' + arraySurname[i] + '</li>';
+}
 
 // ask userSurname
 var userSurname = prompt("Insert your surname");
-// console.log(userSurname);
-// console.log('=====');
+userSurname = userSurname.toUpperCase();
 
 // insert inside an existing array
 arraySurname.push(userSurname);
-// for (var i = 0; i < arraySurname.length; i++) {
-//   console.log(arraySurname[i]);
-// }
-// console.log('=====');
 
-// print array sorted alphabetically html ul li
+// print array sorted alphabetically inside the console
 arraySurname.sort();
+console.log('=====');
 for (var i = 0; i < arraySurname.length; i++) {
   console.log(arraySurname[i]);
 }
 console.log('=====');
 
-// print the surname position of the user
-var check = false;
-var userPosition;
+// print array sorted alphabetically inside the html
+var arraySurnameUlSortedList = document.getElementById('sorted-list');
 for (var i = 0; i < arraySurname.length; i++) {
+  arraySurnameUlSortedList.innerHTML = arraySurnameUlSortedList.innerHTML + '<li>' + arraySurname[i] + '</li>';
   if (userSurname === arraySurname[i]) {
-    check = true;
-    userPosition = i + 1;
-    console.log("userPosition is " + userPosition);
+    arraySurnameUlSortedList.innerHTML = arraySurnameUlSortedList.innerHTML + '<li class="red">' + arraySurname[i] + '</li>';
   }
 }
-if (check === false) {
-  console.log("Can this happen??") // nope
+
+// print the surname position of the user
+var userPosition;
+var userPositionPosition = document.getElementById('position');
+for (var i = 0; i < arraySurname.length; i++) {
+  if (userSurname === arraySurname[i]) {
+    userPosition = i + 1;
+    console.log("userPosition is " + userPosition);
+    userPositionPosition.innerHTML = userPosition;
+    userPositionPosition.classList.add('red');
+  }
 }
